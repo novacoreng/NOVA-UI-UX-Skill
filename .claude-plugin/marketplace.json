@@ -1,0 +1,33 @@
+{
+  "name": "nova-ui-ux-skill",
+  "id": "nova-ui-ux-skill",
+  "owner": {
+    "name": "nova"
+  },
+  "metadata": {
+    "description": "Production-grade UI/UX design intelligence with searchable design data, stack guidance, accessibility rules, responsive behavior, and implementation verification.",
+    "version": "2.14.0"
+  },
+  "plugins": [
+    {
+      "name": "nova-ui-ux-skill",
+      "source": "./",
+      "description": "Professional UI/UX design intelligence for AI coding assistants.",
+      "version": "2.14.0",
+      "author": {
+        "name": "nova"
+      },
+      "keywords": [
+        "ui",
+        "ux",
+        "design",
+        "design-system",
+        "accessibility",
+        "responsive",
+        "production"
+      ],
+      "category": "design",
+      "strict": false
+    }
+  ]
+}
