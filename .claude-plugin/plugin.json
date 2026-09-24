@@ -1,0 +1,23 @@
+{
+  "name": "nova-ui-ux-skill",
+  "description": "UI/UX design intelligence for building, reviewing, and shipping professional interfaces across web, mobile, and desktop, including design systems, accessibility, responsive behavior, interaction, typography, color, charts, and production readiness.",
+  "version": "2.14.0",
+  "author": {
+    "name": "Nova"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ui",
+    "ux",
+    "design",
+    "design-system",
+    "accessibility",
+    "responsive",
+    "typography",
+    "color",
+    "charts",
+    "components",
+    "production-readiness"
+  ],
+  "skills": "./.claude/skills/"
+}
