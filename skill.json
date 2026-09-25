@@ -1,0 +1,14 @@
+{
+  "name": "nova-ui-ux-skill",
+  "displayName": "Nova UI/UX Skill",
+  "description": "Production-grade UI/UX design intelligence with searchable design data, stack guidance, accessibility, responsive behavior, design systems, and implementation verification.",
+  "version": "2.14.0",
+  "author": "Nova",
+  "license": "MIT",
+  "entrypoints": {
+    "search": "src/nova-ui-ux-skill/scripts/search.py",
+    "designSystem": "src/nova-ui-ux-skill/scripts/design_system.py",
+    "claudeSkill": ".claude/skills/nova-ui-ux-skill/SKILL.md",
+    "cli": "cli"
+  }
+}
