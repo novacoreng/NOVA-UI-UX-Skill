@@ -7,6 +7,68 @@ description: "Production UI/UX design intelligence for web, mobile, and desktop.
 
 Use this skill for UI structure, visual design decisions, interaction patterns, accessibility, responsive behavior, design systems, implementation guidance, and production-quality UX verification.
 
+## Nova design philosophy
+
+Build interfaces that feel **custom, ultra-clean, breathable, intentional, and product-specific** rather than generic template UI.
+
+Do not interpret this as permission to sacrifice usability, accessibility, performance, platform conventions, or maintainability for visual novelty. Distinctive design must remain functional.
+
+### Visual design
+
+- Build custom design systems with explicit color tokens, typography scales, spacing rhythm, radii, elevation, borders, motion, and semantic states.
+- Avoid cookie-cutter templates and arbitrary one-off values.
+- Use typography intentionally: font pairing, weight contrast, tracking, display/body hierarchy, readable line length, and responsive type scales.
+- Prefer licensed/project-approved fonts. Use Google Fonts or other approved sources when appropriate; never assume a premium font is legally available.
+- Apply color theory through tonal surfaces, light/dark/tinted/saturated variants, semantic colors, and accessible contrast.
+- Treat imagery as part of the product system: art direction, focal-point cropping, responsive image sources, aspect ratios, loading behavior, and meaningful alternatives.
+- Use generated imagery or curated photography when it strengthens the product; do not add decorative imagery merely to fill space.
+
+### Layout and composition
+
+- Give content breathing room. Whitespace is structural, not leftover space.
+- Use responsive grids and fluid constraints from narrow phones through large desktop displays.
+- Establish hierarchy through size, weight, color, position, grouping, and progressive disclosure.
+- Design information architecture before polishing individual components.
+- Keep pages focused and navigation predictable.
+- Preserve the user's existing locked design decisions unless the user explicitly authorizes a redesign.
+
+### Motion and interaction
+
+- Use motion to communicate state, hierarchy, continuity, and cause/effect.
+- Support Framer Motion, Reanimated, GSAP, CSS transitions, and platform-native animation systems according to the detected stack.
+- Define entrance/exit, layout, spring, hover, focus, press, loading, modal/drawer, accordion, and page-transition behavior intentionally.
+- Micro-interactions should provide useful feedback rather than visual noise.
+- Skeletons, progress indicators, success feedback, and celebration effects such as confetti are optional enhancements and must not block core flows.
+- Respect reduced-motion preferences and provide equivalent non-animated state changes.
+
+### Component craft
+
+- Prefer established primitives when they meet the product requirement; customize them through the design system rather than forcing generic defaults.
+- For React/web projects, shadcn/ui can provide accessible primitives for buttons, dialogs, dropdowns, tabs, tooltips, command palettes, data tables, and related patterns.
+- Build custom components when the product requires behavior or visual treatment that a primitive cannot provide. Keep components focused and maintainable.
+- For forms, consider react-hook-form or the stack's equivalent when it improves validation, field state, performance, and maintainability.
+- Support inline validation, disabled-while-submitting, server validation, OTP flows, multi-step wizards, recovery, and accessible error summaries where applicable.
+- For data visualization, use the project's existing charting system; Recharts is an option for React when appropriate.
+- For maps, use the project's established mapping library; react-leaflet is an option for React web projects when appropriate.
+- For drag-and-drop, use a maintained accessible library or platform primitive; @hello-pangea/dnd is one option for React projects where its model fits.
+- Do not introduce a dependency merely because it is listed here. Detect the stack and choose the smallest appropriate tool.
+
+### Accessibility and polish
+
+- Keyboard navigation and focus management are first-class requirements.
+- Use semantic elements, accessible names, descriptions, labels, roles, states, and announcements.
+- Never rely on color alone to communicate state.
+- Every data flow needs an intentional loading, empty, error, and recovery experience; never leave a blank screen when the user needs feedback.
+- Support graceful fallbacks for missing media, network failures, permissions, and partial data.
+- Support RTL layouts when the product requires Arabic, Hebrew, or another RTL locale.
+
+### Platform-aware behavior
+
+- Design touch targets, safe areas, bottom sheets, swipe gestures, keyboard behavior, and mobile navigation intentionally.
+- For web projects, verify SEO and metadata requirements when public discovery matters: page titles, descriptions, canonical behavior, Open Graph, favicons, structured data where applicable, and crawlability.
+- For Expo/React Native, account for platform differences rather than assuming web CSS behavior maps directly to native.
+- For transient notification surfaces and Dynamic Island-style UI, consult `docs/external-patterns/EXPO-DYNAMIC-NOTIFICATIONS.md` when relevant.
+
 ## Production-quality rule
 
 For real applications, treat UI as a product contract between the user, frontend, backend, device, and accessibility technology.
@@ -123,6 +185,7 @@ For compact UI/text bugs, search the semantic UX outcome first, then the detecte
 - Reuse design tokens and component variants.
 - Test the rendered product, not only source code.
 - Never use emoji as interface icons when a proper icon system is available.
+- Do not force a preferred library when the project's existing stack provides a better fit.
 
 For complete universal production requirements, read `references/production-readiness.md`.
 
