@@ -77,7 +77,9 @@ Use explicit domains for focused questions:
 - `react` — React performance
 - `web` — app/native/web implementation guidance
 
-Use stack searches for React, Next.js, Vue, Svelte, Astro, Nuxt, Angular, Laravel, SwiftUI, React Native, Flutter, Jetpack Compose, Tailwind, shadcn/ui, Three.js, JavaFX, WPF, WinUI, Avalonia, Uno, and UWP.
+Use stack searches for React, Next.js, Vue, Svelte, Astro, Nuxt, Angular, Laravel, SwiftUI, React Native, Expo, Flutter, Jetpack Compose, Tailwind, shadcn/ui, Three.js, JavaFX, WPF, WinUI, Avalonia, Uno, and UWP.
+
+For Expo/React Native transient notification surfaces, consult `docs/external-patterns/EXPO-DYNAMIC-NOTIFICATIONS.md` when the project needs Dynamic Island-style overlays, gesture-dismissible cards, native blur/Skia effects, or animation choreography.
 
 ### 5. Apply production gates
 
