@@ -65,7 +65,7 @@ Do not interpret this as permission to sacrifice usability, accessibility, perfo
 ### Platform-aware behavior
 
 - Design touch targets, safe areas, bottom sheets, swipe gestures, keyboard behavior, and mobile navigation intentionally.
-- For web projects, verify SEO and metadata requirements when public discovery matters: page titles, descriptions, canonical behavior, Open Graph, favicons, structured data where applicable, and crawlability.
+- For web projects, verify SEO and metadata requirements when public discovery matters.
 - For Expo/React Native, account for platform differences rather than assuming web CSS behavior maps directly to native.
 - For transient notification surfaces and Dynamic Island-style UI, consult `docs/external-patterns/EXPO-DYNAMIC-NOTIFICATIONS.md` when relevant.
 
@@ -83,7 +83,9 @@ Never mark a screen finished because it looks correct in one screenshot.
 
 ### Design-direction checkpoint
 
-Before significant implementation, read `docs/PRD-TRD-DESIGN-SELECTION.md` and `docs/EXTERNAL-REFERENCE-MATRIX.md`. Derive the relevant visual directions from the PRD/TRD, then ask the user which design direction should lead when more than one valid option exists. Do not ask when a visual direction is already explicitly locked or the task is a targeted bug fix. Record the approved direction in the project's Master design-system decision.
+Before significant implementation, read `docs/PRD-TRD-DESIGN-SELECTION.md` and `docs/EXTERNAL-REFERENCE-MATRIX.md`. For the five integrated visual repositories and their detailed extracted patterns, also consult `docs/EXTERNAL-REFERENCE-COVERAGE.md`.
+
+Derive the relevant visual directions from the PRD/TRD, then ask the user which design direction should lead when more than one valid option exists. Do not ask when a visual direction is already explicitly locked or the task is a targeted bug fix. Record the approved direction in the project's Master design-system decision.
 
 ### 1. Analyze requirements
 
@@ -118,11 +120,13 @@ For each critical surface, account for applicable:
 
 ### 3. Generate a coherent design system
 
-For new pages or projects, use the local search engine with `--design-system`.
+For new pages or projects, use the local search engine with `--design-system` when the repository search helper is available.
 
 ```bash
 python "${CLAUDE_PLUGIN_ROOT}/.claude/skills/nova-ui-ux-skill/scripts/search.py" "<product> <industry> <keywords>" --design-system
 ```
+
+The repository includes a dependency-free fallback search helper. When the full Nova catalog package is synchronized, its richer search engine can replace or extend this helper.
 
 Persist project decisions only with explicit output paths. Existing Master design-system decisions are the source of truth unless the user authorizes replacement.
 
@@ -145,9 +149,7 @@ Use explicit domains for focused questions:
 
 Use stack searches for React, Next.js, Vue, Svelte, Astro, Nuxt, Angular, Laravel, SwiftUI, React Native, Expo, Flutter, Jetpack Compose, Tailwind, shadcn/ui, Three.js, React Three Fiber, WebGL, GLSL/shaders, liquid glass, and other detected stack guidance.
 
-For visually ambitious builds, consult `docs/EXTERNAL-REFERENCE-MATRIX.md`. Choose effects from the PRD/TRD and the approved visual direction rather than adding effects by default.
-
-For Expo/React Native transient notification surfaces, consult `docs/external-patterns/EXPO-DYNAMIC-NOTIFICATIONS.md` when the project needs Dynamic Island-style overlays, gesture-dismissible cards, native blur/Skia effects, or animation choreography.
+For visually ambitious builds, consult `docs/EXTERNAL-REFERENCE-COVERAGE.md` and `docs/EXTERNAL-REFERENCE-MATRIX.md`. Choose effects from the PRD/TRD and approved visual direction rather than adding effects by default.
 
 ### 5. Apply production gates
 
@@ -192,7 +194,7 @@ For compact UI/text bugs, search the semantic UX outcome first, then the detecte
 - Test the rendered product, not only source code.
 - Never use emoji as interface icons when a proper icon system is available.
 - Do not force a preferred library when the project's existing stack provides a better fit.
+- Do not copy external repositories wholesale into Nova; extract patterns and preserve licenses/attribution for direct reuse.
 
 For complete universal production requirements, read `references/production-readiness.md`.
-
-For detailed rules, use `references/quick-reference.md` and `references/pro-rules.md`.
+For concise rules, read `references/quick-reference.md` and `references/pro-rules.md`.
