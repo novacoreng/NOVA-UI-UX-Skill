@@ -81,6 +81,10 @@ Never mark a screen finished because it looks correct in one screenshot.
 
 ## Workflow
 
+### Design-direction checkpoint
+
+Before significant implementation, read `docs/PRD-TRD-DESIGN-SELECTION.md` and `docs/EXTERNAL-REFERENCE-MATRIX.md`. Derive the relevant visual directions from the PRD/TRD, then ask the user which design direction should lead when more than one valid option exists. Do not ask when a visual direction is already explicitly locked or the task is a targeted bug fix. Record the approved direction in the project's Master design-system decision.
+
 ### 1. Analyze requirements
 
 Extract:
