@@ -1,0 +1,9 @@
+[submodule "vendor/react-three-fiber"]
+	path = vendor/react-three-fiber
+	url = https://github.com/pmndrs/react-three-fiber.git
+[submodule "vendor/liquid-glass-js"]
+	path = vendor/liquid-glass-js
+	url = https://github.com/dashersw/liquid-glass-js.git
+[submodule "vendor/scroll-world"]
+	path = vendor/scroll-world
+	url = https://github.com/oso95/scroll-world.git
