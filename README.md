@@ -17,6 +17,7 @@ Nova combines a production UI/UX workflow with reference patterns for:
 - Expo/React Native interaction and dynamic-notification patterns
 - Stack-appropriate motion systems
 - Production readiness and Definition-of-Done gates
+- Complete production app icon, favicon, PWA, iOS and social-branding setup
 
 > **Package status:** the earlier reference package contained larger searchable catalogs and assets. The current GitHub repository contains the Nova workflow/reference layer and is **not yet a byte-for-byte mirror of that historical package**. See `docs/AUDIT-2026-09-27.md`.
 
@@ -28,10 +29,52 @@ Possible directions: **Clean Premium, Liquid Glass, 3D/WebGL, Shader Gradient, S
 
 See `docs/PRD-TRD-DESIGN-SELECTION.md`, `docs/EXTERNAL-REFERENCE-COVERAGE.md`, and `docs/EXTERNAL-REFERENCE-MATRIX.md`.
 
+## Mandatory app icon & branding requirement
+
+**Every website/app generated with Nova must have a complete, production-ready application icon and branding setup by default. A favicon alone is never considered complete.**
+
+Before declaring a project complete, Nova must:
+
+1. **Identify the framework first** — Next.js, React/Vite, Vue, Angular, plain HTML/CSS/JS, React Native/Expo, or another stack — and use that framework's actual conventions rather than creating unused files.
+2. **Configure desktop favicons** with at least `favicon.ico`, `favicon-16x16.png`, and `favicon-32x32.png` where the target platform supports browser favicon files.
+3. **Configure iOS Home Screen branding** with `apple-touch-icon.png` at approximately 180×180 and the correct Apple Touch Icon metadata. Do not rely only on SVG/favicon assets for iOS.
+4. **Configure Android/PWA branding** when the site functions as a web app, including a valid web manifest with `name`, `short_name`, `description`, `start_url`, `display: standalone`, `theme_color`, `background_color`, and icons including at least 192×192 and 512×512 PNG assets. Provide `any`/`maskable` purposes where appropriate.
+5. **Configure document/head metadata** for favicon, Apple Touch Icon, theme color, mobile-web-app-capable, Apple mobile-web-app-capable, Apple status-bar style, Apple web-app title, and manifest reference as applicable to the framework.
+6. **Configure social sharing** with Open Graph `og:title`, `og:description`, `og:image`, `og:url`, `og:type`, and `og:site_name`, plus Twitter/X card, title, description and image metadata. Prefer a 1200×630 social image.
+7. **Use the project's actual approved brand/logo.** Never invent a replacement logo when a project logo exists. Preserve proportions, safe padding, legibility and transparent-background variants.
+8. **Organize assets clearly** using the framework's public/static convention. A typical web structure is `/public/icons/` for icon files, `/public/images/` for social assets, and `/public/manifest.webmanifest` for the manifest.
+9. **Verify the actual implementation**, not just the source files: browser favicon, iOS Home Screen icon, Android/PWA icon, manifest loading, HTTP 200 icon paths, social metadata, social image, application name, and absence of conflicting favicon/manifest declarations.
+10. **Do not finish with a claim that icons were added unless the wiring was actually inspected and verified.**
+
+### Branding asset checklist
+
+For applicable web/PWA projects, the default production checklist is:
+
+```text
+/public
+  /icons
+    favicon.ico
+    favicon-16x16.png
+    favicon-32x32.png
+    apple-touch-icon.png
+    icon-192.png
+    icon-512.png
+    icon-maskable-512.png
+  /images
+    og-image.png
+  manifest.webmanifest
+```
+
+Adapt this structure to the detected framework. Do not create irrelevant files for frameworks that use another icon pipeline.
+
+### Brand verification prompt
+
+> **Run the Nova App Icon & Branding audit. Detect the framework, locate the approved brand assets, configure favicon, iOS Home Screen, Android/PWA, manifest, theme metadata, Open Graph and Twitter/X metadata using the framework's conventions, then verify the generated paths and references actually work. Do not declare completion until the implementation is wired and checked.**
+
 ## Quick integration prompts
 
 ### Full workflow
-> **Use Nova UI/UX Skill for this build. Read the PRD/TRD, existing design system, and repository first. Build the UI/UX, implementation, responsive states, accessibility, backend states, and production QA using the full Nova workflow.**
+> **Use Nova UI/UX Skill for this build. Read the PRD/TRD, existing design system, and repository first. Build the UI/UX, implementation, responsive states, accessibility, backend states, branding/icon setup, and production QA using the full Nova workflow.**
 
 ### Visual direction
 > **Read the PRD/TRD and propose the relevant visual directions before building. Ask me which direction to use if more than one fits: Clean Premium, Liquid Glass, 3D/WebGL, Shader Gradient, Scroll World, Liquid Identity, or Hybrid.**
@@ -89,7 +132,7 @@ See `docs/PRD-TRD-DESIGN-SELECTION.md`, `docs/EXTERNAL-REFERENCE-COVERAGE.md`, a
 
 ## Recommended one-line prompt
 
-> **Use the Nova UI/UX Skill for this build. Read the PRD/TRD and existing repo first, identify the appropriate design direction and ask me to choose when needed, then implement the approved design with complete states, responsive behavior, accessibility, real backend behavior, performance and production QA.**
+> **Use the Nova UI/UX Skill for this build. Read the PRD/TRD and existing repo first, identify the appropriate design direction and ask me to choose when needed, then implement the approved design with complete states, responsive behavior, accessibility, real backend behavior, complete application branding/icon setup, performance and production QA.**
 
 ## Skill location
 
