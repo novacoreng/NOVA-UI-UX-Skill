@@ -113,3 +113,7 @@ Target WCAG 2.2 AA unless a stricter project requirement exists. Use semantic st
 ## Source-of-truth
 
 Nova-owned implementations live under `src/nova-ui-ux/`. Detailed system contracts live under `docs/`. Historical external repository pointers are not runtime dependencies and must not be imported by new projects.
+
+## Mandatory privacy and consumer protection gate
+
+For every build, read `docs/PRIVACY-CONSUMER-PROTECTION-GATE.md` during PRD/TRD analysis and before production sign-off. Never implement spam marketing, missing opt-outs, leaky analytics, unnecessary biometric collection, missing privacy notices, unsafe children's data processing, fabricated reviews, obstructive subscription cancellation, or false AI/engagement claims. Verify server-side enforcement and request jurisdiction-specific legal review when necessary.
