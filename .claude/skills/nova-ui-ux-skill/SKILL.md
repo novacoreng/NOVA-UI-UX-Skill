@@ -117,3 +117,7 @@ Nova-owned implementations live under `src/nova-ui-ux/`. Detailed system contrac
 ## Mandatory privacy and consumer protection gate
 
 For every build, read `docs/PRIVACY-CONSUMER-PROTECTION-GATE.md` during PRD/TRD analysis and before production sign-off. Never implement spam marketing, missing opt-outs, leaky analytics, unnecessary biometric collection, missing privacy notices, unsafe children's data processing, fabricated reviews, obstructive subscription cancellation, or false AI/engagement claims. Verify server-side enforcement and request jurisdiction-specific legal review when necessary.
+
+## Mandatory legal, privacy, accessibility and trust launch checklist
+
+Read and enforce `docs/LEGAL-PRIVACY-ACCESSIBILITY-LAUNCH-CHECKLIST.md` for every applicable Nova project. Audit privacy policies, genuine reviews, terms, substantiated claims, refund policies, image alt text, cookies and consent, contrast, keyboard support, form consents, real business details, data minimization, children's data, third-party SDKs, unsubscribe, dark patterns, font/image licenses, transparent fees and data deletion requests. Record Pass/Fail/Not Applicable/Needs Legal Review with evidence before launch. Do not certify legal compliance or invent business/legal details. Never use the em dash character in generated project content.
