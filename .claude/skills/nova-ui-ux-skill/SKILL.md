@@ -121,3 +121,13 @@ For every build, read `docs/PRIVACY-CONSUMER-PROTECTION-GATE.md` during PRD/TRD 
 ## Mandatory legal, privacy, accessibility and trust launch checklist
 
 Read and enforce `docs/LEGAL-PRIVACY-ACCESSIBILITY-LAUNCH-CHECKLIST.md` for every applicable Nova project. Audit privacy policies, genuine reviews, terms, substantiated claims, refund policies, image alt text, cookies and consent, contrast, keyboard support, form consents, real business details, data minimization, children's data, third-party SDKs, unsubscribe, dark patterns, font/image licenses, transparent fees and data deletion requests. Record Pass/Fail/Not Applicable/Needs Legal Review with evidence before launch. Do not certify legal compliance or invent business/legal details. Never use the em dash character in generated project content.
+
+## Mandatory iPhone and Android safe-area support
+
+Every mobile website, PWA and native mobile app must respect the actual device safe-area insets, including notches, Dynamic Island, status bars, rounded corners, gesture areas, navigation bars and home indicators. Never hardcode a universal inset in pixels as a substitute for device measurements.
+
+For responsive web/PWAs, set `viewport-fit=cover` where appropriate and use CSS `env(safe-area-inset-top)`, `env(safe-area-inset-right)`, `env(safe-area-inset-bottom)` and `env(safe-area-inset-left)` with sensible fallbacks. Apply insets to fixed headers, bottom navigation, sticky actions, full-screen overlays and edge-to-edge layouts. Combine them with existing spacing using `max()` or `calc()` instead of double-padding. Ensure viewport behavior remains accessible when zoomed and with the keyboard open.
+
+For Expo/React Native, use `react-native-safe-area-context` with `SafeAreaProvider`, `useSafeAreaInsets` and/or `SafeAreaView` as appropriate. Respect Android edge-to-edge and system bar behavior; do not assume Android and iOS insets are identical. Avoid duplicate padding when navigation libraries already handle safe areas. Account for landscape orientation, tablets, foldables, rotation and keyboard interactions.
+
+QA must test on representative iPhones with a notch or Dynamic Island, iPhones with a home indicator, Android gesture navigation and Android three-button navigation, plus landscape and small screens. Verify no content, buttons, forms, toasts, modals or bottom tabs are obscured or unreachable. Preserve approved designs and existing functionality. Never use the em dash character in project text.
