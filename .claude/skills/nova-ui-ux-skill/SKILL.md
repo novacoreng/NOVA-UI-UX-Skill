@@ -152,3 +152,5 @@ For every new or existing browser-based application that is suitable for install
 - Installed UI must remain responsive, accessible, keyboard usable, and safe-area aware. Respect reduced motion and avoid repeated prompts or misleading app-store claims.
 - Validate manifest/icon URLs, service worker scope, install eligibility where supported, standalone launch, offline fallback, update behavior, authentication, payments, browser/platform differences and existing app functionality. Report untested platforms explicitly; never claim installation has been verified without device/browser testing.
 - Add PWA acceptance criteria to PRD/TRD and production QA for eligible web apps. Apply across brands including NovaCore, Hookups, JaraFund, GOEVD, WorkSync and NaijaSino, while retaining each project's own branding and security requirements.
+
+The detailed execution specification and test matrix are in `docs/PWA-INSTALLATION-IMPLEMENTATION.md`. Read and apply this document whenever implementing PWA installation, and report actual browser/device verification rather than assuming success.
