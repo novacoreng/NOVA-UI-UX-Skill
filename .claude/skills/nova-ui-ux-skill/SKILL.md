@@ -154,3 +154,7 @@ For every new or existing browser-based application that is suitable for install
 - Add PWA acceptance criteria to PRD/TRD and production QA for eligible web apps. Apply across brands including NovaCore, Hookups, JaraFund, GOEVD, WorkSync and NaijaSino, while retaining each project's own branding and security requirements.
 
 The detailed execution specification and test matrix are in `docs/PWA-INSTALLATION-IMPLEMENTATION.md`. Read and apply this document whenever implementing PWA installation, and report actual browser/device verification rather than assuming success.
+
+## Mandatory phase completion reporting
+
+After every development phase, display the full project phase roadmap and mark each phase accurately: Completed and verified, In progress, Not started, or Blocked. Include a concise summary of implemented work, actual test results, GitHub commit links or SHAs when applicable, unresolved issues, and the next phase. Preserve prior phases in the roadmap so progress is visible over time. Never mark a phase complete solely because it was planned, described, or partially implemented. If tests or deployment verification were not run, explicitly state that limitation. Apply this rule to every project and every phase, including follow-up requests to proceed.
